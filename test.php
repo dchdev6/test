@@ -12,10 +12,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 // User creation process
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = htmlspecialchars($_POST["username"]);
@@ -37,3 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 $conn->close();
 ?>
+
+<form method="POST" action="your_script.php">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <button type="submit">Create User</button>
+</form>
